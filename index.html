@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Plombier à Château-du-Loir et alentours : demande de devis gratuite</title>
+<meta name="description" content="Fuite, chauffe-eau, chaudière, salle de bain : décrivez votre besoin, un plombier du secteur de Château-du-Loir vous rappelle pour votre devis gratuit.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230f3d2e'/%3E%3Cpath d='M16 6c4 5 7 9 7 13a7 7 0 0 1-14 0c0-4 3-8 7-13z' fill='%23f2b33d'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --vert:#0f3d2e; --vert-2:#14503c; --vert-clair:#1f7a55; --or:#f2b33d;
+  --creme:#f6f3ec; --texte:#16201b; --gris:#5b6660; --ligne:#dfe3df; --blanc:#fff;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,system-ui,sans-serif;color:var(--texte);background:var(--creme);line-height:1.5;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+img{display:block;max-width:100%}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+
+/* En-tête */
+header{background:var(--blanc);border-bottom:1px solid var(--ligne)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+.marque{display:flex;align-items:center;gap:10px;font-weight:800;font-size:17px;text-decoration:none;letter-spacing:-.01em}
+.marque svg{width:30px;height:30px}
+.marque span{color:var(--vert-clair)}
+.liens{display:flex;gap:28px;font-size:14px;font-weight:500;color:var(--gris)}
+.liens a{text-decoration:none}
+.liens a:hover{color:var(--texte)}
+
+/* Hero */
+.hero{background:var(--vert);color:var(--blanc);padding:44px 0 56px}
+.hero-grille{display:grid;grid-template-columns:1.25fr .95fr;grid-template-areas:"texte carte" "duo carte";grid-template-rows:auto 1fr;column-gap:40px;align-items:start}
+.carte{grid-row:1 / 3}
+.hero-texte{grid-area:texte}.hero-duo{grid-area:duo}.carte{grid-area:carte}
+.pastille{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.1);border-radius:999px;padding:6px 14px;font-size:13px;font-weight:600}
+.pastille i{width:8px;height:8px;border-radius:50%;background:#4ade80;box-shadow:0 0 0 3px rgba(74,222,128,.25)}
+h1{font-size:clamp(30px,3.8vw,46px);line-height:1.08;letter-spacing:-.025em;font-weight:800;margin:18px 0 14px}
+.accroche{font-size:clamp(20px,2.2vw,26px);font-weight:700;color:#fff;margin:-4px 0 14px;letter-spacing:-.01em}
+h1 em{font-style:normal;color:var(--or);white-space:nowrap}
+.sous-titre{font-size:17px;color:rgba(255,255,255,.82);max-width:540px}
+.atouts{display:flex;flex-wrap:wrap;gap:10px 22px;margin:20px 0 26px;font-size:14px;font-weight:500}
+.atouts li{list-style:none;display:flex;align-items:center;gap:8px}
+.atouts svg{width:18px;height:18px;flex:none}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:6px;border-radius:16px;overflow:hidden;position:relative;max-width:560px}
+.duo figure{position:relative}
+.duo img{width:100%;height:auto;aspect-ratio:1/1;object-fit:cover}
+.duo figcaption{position:absolute;left:12px;top:12px;background:rgba(15,61,46,.85);color:#fff;font-size:12px;font-weight:700;padding:5px 10px;border-radius:999px;letter-spacing:.02em}
+.duo-note{font-size:12px;color:rgba(255,255,255,.55);margin-top:8px}
+
+/* Formulaire */
+.carte{background:var(--blanc);color:var(--texte);border-radius:18px;padding:26px 24px 22px;box-shadow:0 24px 60px -20px rgba(0,0,0,.45)}
+.carte h2{font-size:21px;letter-spacing:-.015em;font-weight:800}
+.delai{display:inline-block;margin:8px 0 6px;background:#e5f4ec;color:var(--vert-clair);font-size:12.5px;font-weight:700;padding:4px 10px;border-radius:999px}
+.carte .intro{font-size:13.5px;color:var(--gris);margin-bottom:16px}
+.champ{margin-bottom:12px}
+.champ label{display:block;font-size:13px;font-weight:600;margin-bottom:5px}
+.champ label small{font-weight:400;color:var(--gris)}
+input,select,textarea{width:100%;font:inherit;font-size:15px;color:var(--texte);background:#fafbfa;border:1.5px solid var(--ligne);border-radius:10px;padding:11px 12px;transition:border-color .15s}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--vert-clair);background:#fff}
+textarea{min-height:92px;resize:vertical}
+.deux{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.accord{display:flex;gap:10px;align-items:flex-start;font-size:12.5px;color:var(--gris);margin:6px 0 14px}
+.accord input{width:18px;height:18px;flex:none;margin-top:1px;accent-color:var(--vert-clair)}
+.btn{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;border:0;cursor:pointer;background:var(--vert-clair);color:#fff;font:inherit;font-size:16px;font-weight:700;padding:15px 18px;border-radius:12px;transition:background .15s,transform .15s}
+.btn:hover{background:var(--vert-2)}
+.btn:active{transform:scale(.99)}
+.btn:disabled{opacity:.6;cursor:wait}
+.mention{font-size:12px;color:var(--gris);margin-top:12px;line-height:1.45}
+.mention a{color:var(--vert-clair)}
+.retour{display:none;margin-top:12px;padding:12px 14px;border-radius:10px;font-size:14px;font-weight:500}
+.retour.ok{display:block;background:#e5f4ec;color:var(--vert-2)}
+.retour.err{display:block;background:#fdecea;color:#9b2c1f}
+.piege{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+
+/* Sections */
+section{padding:72px 0}
+#etapes{padding-bottom:0}
+.surtitre{font-size:13px;font-weight:700;color:var(--vert-clair);letter-spacing:.08em;text-transform:uppercase}
+h3.titre{font-size:clamp(26px,3vw,36px);letter-spacing:-.02em;font-weight:800;line-height:1.15;margin:8px 0 28px;max-width:640px}
+.etapes{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.etape{background:var(--blanc);border-radius:16px;padding:24px}
+.etape b{display:flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:50%;background:var(--vert);color:var(--or);font-size:16px;margin-bottom:14px}
+.etape h4{font-size:17px;margin-bottom:6px}
+.etape p{font-size:14.5px;color:var(--gris)}
+
+.besoins{background:var(--blanc)}
+.besoins-grille{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center}
+.besoins-photo{border-radius:18px;overflow:hidden}
+.besoins-photo img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover}
+.liste{display:grid;gap:10px}
+.liste li{list-style:none;display:flex;gap:14px;align-items:flex-start;padding:14px 16px;border:1.5px solid var(--ligne);border-radius:12px}
+.liste svg{width:22px;height:22px;flex:none;color:var(--vert-clair);margin-top:1px}
+.liste strong{display:block;font-size:15.5px}
+.liste span{font-size:14px;color:var(--gris)}
+
+.zones-communes{display:flex;flex-wrap:wrap;gap:10px}
+.zones-communes span{background:var(--blanc);border:1.5px solid var(--ligne);border-radius:999px;padding:8px 16px;font-size:14.5px;font-weight:500}
+.zones-note{margin-top:18px;font-size:14.5px;color:var(--gris)}
+
+.final{background:var(--vert);color:#fff;text-align:center}
+.final h3{font-size:clamp(26px,3vw,36px);font-weight:800;letter-spacing:-.02em;margin-bottom:10px}
+.final p{color:rgba(255,255,255,.8);margin-bottom:24px}
+.final .btn{display:inline-flex;width:auto;background:var(--or);color:var(--vert);padding:15px 28px;text-decoration:none}
+.final .btn:hover{background:#ffc75a}
+
+footer{background:#0b2e22;color:rgba(255,255,255,.6);font-size:13px;padding:28px 0}
+.pied{display:flex;flex-wrap:wrap;gap:12px 24px;justify-content:space-between}
+footer a{color:rgba(255,255,255,.75)}
+
+@media (max-width:900px){
+  .besoins-grille{grid-template-columns:1fr}
+  .hero-grille{grid-template-columns:1fr;grid-template-areas:"texte" "carte" "duo";grid-template-rows:auto;row-gap:28px}
+  .carte{grid-row:auto}
+  .etapes{grid-template-columns:1fr}
+  .liens{display:none}
+  .hero{padding:28px 0 40px}
+  .duo{max-width:none}
+  section{padding:56px 0}
+}
+@media (max-width:420px){ .deux{grid-template-columns:1fr} }
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="marque" href="/" aria-label="Accueil">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="7" fill="#0f3d2e"/><path d="M16 6c4 5 7 9 7 13a7 7 0 0 1-14 0c0-4 3-8 7-13z" fill="#f2b33d"/></svg>
+      Plombier <span>Château-du-Loir</span>
+    </a>
+    <nav class="liens" aria-label="Navigation">
+      <a href="#zones">Zones d'intervention</a>
+      <a href="#etapes">Comment ça marche</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="hero" aria-labelledby="titre">
+  <div class="wrap hero-grille">
+    <div class="hero-texte">
+      <span class="pastille"><i></i>Plombiers du secteur disponibles</span>
+      <h1 id="titre">Plombier à <em>Château-du-Loir</em></h1>
+      <p class="accroche">Votre plombier près de chez vous</p>
+      <p class="sous-titre">Fuite, chauffe-eau, chaudière ou salle de bain : décrivez votre besoin en deux minutes et recevez votre devis gratuit.</p>
+      <ul class="atouts">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="#f2b33d" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Devis gratuit</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="#f2b33d" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Sans engagement</li>
+      </ul>
+    </div>
+    <div class="hero-duo">
+      <div class="duo">
+        <figure><img src="img/travail.webp" alt="Mains d'un chauffagiste qui intervient sur une chaudière" width="800" height="800" fetchpriority="high"></figure>
+        <figure><img src="img/salle-de-bain.webp" alt="Salle de bain moderne avec douche à l'italienne" width="800" height="800"></figure>
+      </div>
+    </div>
+
+    <div class="carte" id="devis">
+      <h2>Demandez votre devis gratuit</h2>
+      <span class="delai">Réponse sous 24 h</span>
+      <p class="intro">On vous rappelle pour préciser votre besoin et fixer un rendez-vous.</p>
+      <form id="form-devis" novalidate>
+        <div class="deux">
+          <div class="champ"><label for="nom">Votre nom</label><input id="nom" name="nom" autocomplete="name" required maxlength="80"></div>
+          <div class="champ"><label for="tel">Téléphone</label><input id="tel" name="telephone" type="tel" autocomplete="tel" inputmode="tel" required maxlength="20" placeholder="06 12 34 56 78"></div>
+        </div>
+        <div class="champ"><label for="email">E-mail</label><input id="email" name="email" type="email" autocomplete="email" required maxlength="120"></div>
+        <div class="deux">
+          <div class="champ"><label for="commune">Commune</label><input id="commune" name="commune" autocomplete="address-level2" required maxlength="60"></div>
+          <div class="champ"><label for="besoin">Besoin</label>
+            <select id="besoin" name="besoin" required>
+              <option value="">Choisir…</option>
+              <option>Fuite d'eau</option>
+              <option>Chauffe-eau</option>
+              <option>Chaudière / chauffage</option>
+              <option>Salle de bain</option>
+              <option>Débouchage</option>
+              <option>Autre</option>
+            </select>
+          </div>
+        </div>
+        <div class="champ"><label for="message">Décrivez vos travaux</label><textarea id="message" name="message" required maxlength="1500" placeholder="Ex. : le chauffe-eau de 200 L ne chauffe plus, maison à Vaas."></textarea></div>
+        <div class="piege" aria-hidden="true"><label for="site">Site</label><input id="site" name="site" tabindex="-1" autocomplete="off"></div>
+        <label class="accord"><input type="checkbox" name="accord" required> J'accepte que ma demande et mes coordonnées soient transmises à un plombier partenaire du secteur pour qu'il me recontacte.</label>
+        <button class="btn" type="submit">Demander mon devis gratuit</button>
+        <p class="mention">Votre demande est transmise à un plombier partenaire du secteur, qui vous recontacte. Service gratuit et sans engagement. <a href="/confidentialite.html">Politique de confidentialité</a>.</p>
+        <p class="retour" id="retour" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section id="etapes" aria-label="Comment ça marche">
+  <div class="wrap">
+    <p class="surtitre" style="margin-bottom:20px">Comment ça marche</p>
+    <div class="etapes">
+      <div class="etape"><b>1</b><h4>Vous décrivez votre besoin</h4><p>Le formulaire prend deux minutes. Plus vous donnez de détails, plus le devis sera juste.</p></div>
+      <div class="etape"><b>2</b><h4>Un plombier vous rappelle</h4><p>Votre demande part chez un plombier partenaire qui intervient dans votre commune.</p></div>
+      <div class="etape"><b>3</b><h4>Vous recevez votre devis</h4><p>Il vous propose un prix et une date. Vous êtes libre d'accepter ou non.</p></div>
+    </div>
+  </div>
+</section>
+
+
+<section id="zones" aria-labelledby="t-zones">
+  <div class="wrap">
+    <p class="surtitre">Zones d'intervention</p>
+    <h3 class="titre" id="t-zones">Château-du-Loir et les communes autour</h3>
+    <div class="zones-communes">
+      <span>Château-du-Loir</span><span>Montval-sur-Loir</span><span>Vaas</span><span>Mayet</span><span>Le Lude</span><span>La Chartre-sur-le-Loir</span><span>Dissay-sous-Courcillon</span><span>Marçon</span><span>Jupilles</span><span>Thoiré-sur-Dinan</span><span>Aubigné-Racan</span><span>Le Grand-Lucé</span>
+    </div>
+    <p class="zones-note">Votre commune n'est pas dans la liste ? Envoyez quand même votre demande : si un plombier partenaire intervient chez vous, il vous rappelle.</p>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap pied">
+    <p>Plombier Château-du-Loir est un service de mise en relation édité par Studio FTT. Les travaux sont réalisés par des plombiers partenaires indépendants.</p>
+    <p><a href="/mentions-legales.html">Mentions légales</a> · <a href="/confidentialite.html">Confidentialité</a></p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var f=document.getElementById('form-devis'), r=document.getElementById('retour'), b=f.querySelector('button');
+  f.addEventListener('submit',function(e){
+    e.preventDefault();
+    r.className='retour'; r.textContent='';
+    if(!f.checkValidity()){ r.className='retour err'; r.textContent='Merci de remplir les champs obligatoires et de cocher la case d’accord.'; f.reportValidity(); return; }
+    b.disabled=true; b.textContent='Envoi en cours…';
+    var data=Object.fromEntries(new FormData(f).entries());
+    fetch('/api/devis',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)})
+      .then(function(res){ if(!res.ok) throw 0; f.reset(); r.className='retour ok'; r.textContent='Merci, votre demande est bien partie. Un plombier du secteur vous rappelle sous 24 h.'; })
+      .catch(function(){ r.className='retour err'; r.textContent='L’envoi n’a pas fonctionné. Réessayez dans un instant.'; })
+      .finally(function(){ b.disabled=false; b.textContent='Demander mon devis gratuit'; });
+  });
+})();
+</script>
+</body>
+</html>
