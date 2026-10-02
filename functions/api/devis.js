@@ -7,6 +7,7 @@ const esc = (s) => s.replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">
 
 export async function onRequestPost({ request, env }) {
   try {
+    if (!env.RESEND_API_KEY || !env.MAIL_TO || !env.MAIL_FROM) return Response.json({ ok: false, code: "config" }, { status: 500 });
     const d = await request.json();
     if (d.site) return Response.json({ ok: true }); // piège à robots
 
@@ -42,7 +43,10 @@ export async function onRequestPost({ request, env }) {
         html,
       }),
     });
-    if (!r.ok) return Response.json({ ok: false }, { status: 502 });
+    if (!r.ok) {
+      console.log("Resend refus", r.status, (await r.text()).slice(0, 300));
+      return Response.json({ ok: false, code: r.status }, { status: 500 });
+    }
     return Response.json({ ok: true });
   } catch {
     return Response.json({ ok: false }, { status: 500 });
