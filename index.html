@@ -121,6 +121,12 @@ h3.titre{font-size:clamp(26px,3vw,36px);letter-spacing:-.02em;font-weight:800;li
 .final .btn{display:inline-flex;width:auto;background:var(--or);color:var(--vert);padding:15px 28px;text-decoration:none}
 .final .btn:hover{background:#ffc75a}
 
+.qui{background:var(--blanc)}
+.qui-carte{display:flex;gap:22px;align-items:flex-start;max-width:760px}
+.qui-avatar{flex:none;width:64px;height:64px;border-radius:50%;background:var(--vert);color:var(--or);display:flex;align-items:center;justify-content:center;font-size:26px;font-weight:800}
+.qui-carte p{font-size:16px;color:#2c3530;margin-top:10px}
+.qui-carte h3{font-size:clamp(22px,2.4vw,28px);letter-spacing:-.02em;font-weight:800;line-height:1.2}
+@media (max-width:520px){.qui-carte{flex-direction:column}}
 footer{background:#0b2e22;color:rgba(255,255,255,.6);font-size:13px;padding:28px 0}
 .pied{display:flex;flex-wrap:wrap;gap:12px 24px;justify-content:space-between}
 footer a{color:rgba(255,255,255,.75)}
@@ -229,6 +235,19 @@ footer a{color:rgba(255,255,255,.75)}
       <span>Château-du-Loir</span><span>Montval-sur-Loir</span><span>Vaas</span><span>Mayet</span><span>Le Lude</span><span>La Chartre-sur-le-Loir</span><span>Dissay-sous-Courcillon</span><span>Marçon</span><span>Jupilles</span><span>Thoiré-sur-Dinan</span><span>Aubigné-Racan</span><span>Le Grand-Lucé</span>
     </div>
     <p class="zones-note">Votre commune n'est pas dans la liste ? Envoyez quand même votre demande : si un plombier partenaire intervient chez vous, il vous rappelle.</p>
+  </div>
+</section>
+
+<section class="qui" aria-labelledby="t-qui">
+  <div class="wrap">
+    <div class="qui-carte">
+      <div class="qui-avatar" aria-hidden="true">N</div>
+      <div>
+        <p class="surtitre">Qui s'occupe de votre demande</p>
+        <h3 id="t-qui">Un service local, géré depuis la Sarthe</h3>
+        <p>Je m'appelle Nathan et j'habite à Arthezé, dans la Sarthe. Quand vous remplissez le formulaire, je lis votre demande et je la transmets le jour même à un plombier du secteur que je connais. C'est lui qui vous rappelle et qui établit votre devis. Ce service ne vous coûte rien.</p>
+      </div>
+    </div>
   </div>
 </section>
 
