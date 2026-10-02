@@ -19,13 +19,13 @@ export async function onRequestPost({ request, env }) {
     const message = clean(d.message, 1500);
 
     const telOk = /^[0-9+ .()-]{10,20}$/.test(telephone);
-    const mailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    const mailOk = !email || /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
     if (!nom || !telOk || !mailOk || !commune || !BESOINS.includes(besoin) || !message || d.accord !== "on") {
       return Response.json({ ok: false }, { status: 400 });
     }
 
     const lignes = [
-      ["Nom", nom], ["Téléphone", telephone], ["E-mail", email],
+      ["Nom", nom], ["Téléphone", telephone], ["E-mail", email || "non renseigné"],
       ["Commune", commune], ["Besoin", besoin], ["Message", message],
       ["Reçue le", new Date().toLocaleString("fr-FR", { timeZone: "Europe/Paris" })],
     ];
@@ -38,7 +38,7 @@ export async function onRequestPost({ request, env }) {
       body: JSON.stringify({
         from: env.MAIL_FROM,
         to: [env.MAIL_TO],
-        reply_to: email,
+        reply_to: email || undefined,
         subject: `Demande plomberie : ${besoin} à ${commune}`,
         html,
       }),
