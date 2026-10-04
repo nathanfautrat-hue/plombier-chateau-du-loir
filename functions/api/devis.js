@@ -17,6 +17,7 @@ export async function onRequestPost({ request, env }) {
     const commune = clean(d.commune, 60);
     const besoin = clean(d.besoin, 40);
     const message = clean(d.message, 1500);
+    const gclid = clean(d.gclid, 200).replace(/[^A-Za-z0-9_-]/g, "");
 
     const telOk = /^[0-9+ .()-]{10,20}$/.test(telephone);
     const mailOk = !email || /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
@@ -27,6 +28,7 @@ export async function onRequestPost({ request, env }) {
     const lignes = [
       ["Nom", nom], ["Téléphone", telephone], ["E-mail", email || "non renseigné"],
       ["Commune", commune], ["Besoin", besoin], ["Message", message],
+      ["Venue de Google Ads", gclid ? "oui (GCLID : " + gclid + ")" : "non"],
       ["Reçue le", new Date().toLocaleString("fr-FR", { timeZone: "Europe/Paris" })],
     ];
     const html = `<h2>Nouvelle demande de devis plomberie</h2><table cellpadding="6">${lignes

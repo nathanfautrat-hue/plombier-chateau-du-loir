@@ -205,6 +205,7 @@ footer a{color:rgba(255,255,255,.75)}
           </div>
         </div>
         <div class="champ"><label for="message">Décrivez vos travaux</label><textarea id="message" name="message" required maxlength="1500" placeholder="Ex. : le chauffe-eau de 200 L ne chauffe plus, maison à Vaas."></textarea></div>
+        <input type="hidden" name="gclid" id="gclid">
         <div class="piege" aria-hidden="true"><label for="site">Site</label><input id="site" name="site" tabindex="-1" autocomplete="off"></div>
         <label class="accord"><input type="checkbox" name="accord" required> J'accepte que ma demande et mes coordonnées soient transmises à un plombier partenaire du secteur pour qu'il me recontacte.</label>
         <button class="btn" type="submit">Demander mon devis gratuit</button>
@@ -263,6 +264,7 @@ footer a{color:rgba(255,255,255,.75)}
 <script>
 (function(){
   var f=document.getElementById('form-devis'), r=document.getElementById('retour'), b=f.querySelector('button');
+  var g=new URLSearchParams(location.search).get('gclid'); if(g) document.getElementById('gclid').value=g.slice(0,200);
   f.addEventListener('submit',function(e){
     e.preventDefault();
     r.className='retour'; r.textContent='';
