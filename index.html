@@ -71,8 +71,7 @@ h1 em{font-style:normal;color:var(--or);white-space:nowrap}
 /* Formulaire */
 .carte{background:var(--blanc);color:var(--texte);border-radius:18px;padding:26px 24px 22px;box-shadow:0 24px 60px -20px rgba(0,0,0,.45)}
 .carte h2{font-size:21px;letter-spacing:-.015em;font-weight:800}
-.delai{display:inline-block;margin:8px 0 6px;background:#e5f4ec;color:var(--vert-clair);font-size:12.5px;font-weight:700;padding:4px 10px;border-radius:999px}
-.carte .intro{font-size:13.5px;color:var(--gris);margin-bottom:16px}
+.carte .intro{font-size:13.5px;color:var(--gris);margin:6px 0 16px}
 .champ{margin-bottom:12px}
 .champ label{display:block;font-size:13px;font-weight:600;margin-bottom:5px}
 .champ label small{font-weight:400;color:var(--gris)}
@@ -185,7 +184,6 @@ footer a{color:rgba(255,255,255,.75)}
 
     <div class="carte" id="devis">
       <h2>Demandez votre devis gratuit</h2>
-      <span class="delai">Réponse sous 24 h</span>
       <p class="intro">On vous rappelle pour préciser votre besoin et fixer un rendez-vous.</p>
       <form id="form-devis" novalidate>
         <div class="deux">
@@ -210,9 +208,9 @@ footer a{color:rgba(255,255,255,.75)}
         <div class="champ"><label for="message">Décrivez vos travaux</label><textarea id="message" name="message" required maxlength="1500" placeholder="Ex. : le chauffe-eau de 200 L ne chauffe plus, maison à Vaas."></textarea></div>
         <input type="hidden" name="gclid" id="gclid">
         <div class="piege" aria-hidden="true"><label for="site">Site</label><input id="site" name="site" tabindex="-1" autocomplete="off"></div>
-        <label class="accord"><input type="checkbox" name="accord" required> J'accepte que ma demande et mes coordonnées soient transmises à un plombier partenaire du secteur pour qu'il me recontacte.</label>
+        <label class="accord"><input type="checkbox" name="accord" required> J'accepte que ma demande et mes coordonnées soient transmises à un plombier du secteur pour qu'il me recontacte.</label>
         <button class="btn" type="submit">Demander mon devis gratuit</button>
-        <p class="mention">Votre demande est transmise à un plombier partenaire du secteur, qui vous recontacte. Service gratuit et sans engagement. <a href="/confidentialite.html">Politique de confidentialité</a>.</p>
+        <p class="mention">Votre demande est transmise à un plombier du secteur, qui vous recontacte. Service gratuit et sans engagement. <a href="/confidentialite.html">Politique de confidentialité</a>.</p>
         <p class="retour" id="retour" role="status" aria-live="polite"></p>
       </form>
     </div>
@@ -224,7 +222,7 @@ footer a{color:rgba(255,255,255,.75)}
     <p class="surtitre" style="margin-bottom:20px">Comment ça marche</p>
     <div class="etapes">
       <div class="etape"><b>1</b><h4>Vous décrivez votre besoin</h4><p>Le formulaire prend deux minutes. Plus vous donnez de détails, plus le devis sera juste.</p></div>
-      <div class="etape"><b>2</b><h4>Un plombier vous rappelle</h4><p>Votre demande part chez un plombier partenaire qui intervient dans votre commune.</p></div>
+      <div class="etape"><b>2</b><h4>Un plombier vous rappelle</h4><p>Votre demande part chez un plombier qui intervient dans votre commune.</p></div>
       <div class="etape"><b>3</b><h4>Vous recevez votre devis</h4><p>Il vous propose un prix et une date. Vous êtes libre d'accepter ou non.</p></div>
     </div>
   </div>
@@ -238,7 +236,7 @@ footer a{color:rgba(255,255,255,.75)}
     <div class="zones-communes">
       <span>Château-du-Loir</span><span>Montval-sur-Loir</span><span>Vaas</span><span>Mayet</span><span>Le Lude</span><span>La Chartre-sur-le-Loir</span><span>Dissay-sous-Courcillon</span><span>Marçon</span><span>Jupilles</span><span>Thoiré-sur-Dinan</span><span>Aubigné-Racan</span><span>Le Grand-Lucé</span>
     </div>
-    <p class="zones-note">Votre commune n'est pas dans la liste ? Envoyez quand même votre demande : si un plombier partenaire intervient chez vous, il vous rappelle.</p>
+    <p class="zones-note">Votre commune n'est pas dans la liste ? Envoyez quand même votre demande : si un plombier du secteur intervient chez vous, il vous rappelle.</p>
   </div>
 </section>
 
@@ -259,7 +257,7 @@ footer a{color:rgba(255,255,255,.75)}
 
 <footer>
   <div class="wrap pied">
-    <p>Plombier Château-du-Loir est un service de mise en relation édité par Studio FTT. Les travaux sont réalisés par des plombiers partenaires indépendants.</p>
+    <p>Plombier Château-du-Loir est un service de mise en relation édité par Studio FTT. Les travaux sont réalisés par des plombiers indépendants du secteur.</p>
     <p><a href="/mentions-legales.html">Mentions légales</a> · <a href="/confidentialite.html">Confidentialité</a></p>
   </div>
 </footer>
@@ -275,7 +273,7 @@ footer a{color:rgba(255,255,255,.75)}
     b.disabled=true; b.textContent='Envoi en cours…';
     var data=Object.fromEntries(new FormData(f).entries());
     fetch('/api/devis',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)})
-      .then(function(res){ if(!res.ok) throw 0; f.reset(); r.className='retour ok'; r.textContent='Merci, votre demande est bien partie. Un plombier du secteur vous rappelle sous 24 h.'; })
+      .then(function(res){ if(!res.ok) throw 0; f.reset(); r.className='retour ok'; r.textContent='Merci, votre demande est bien partie. Un plombier du secteur vous rappelle.'; })
       .catch(function(){ r.className='retour err'; r.textContent='L’envoi n’a pas fonctionné. Réessayez dans un instant.'; })
       .finally(function(){ b.disabled=false; b.textContent='Demander mon devis gratuit'; });
   });
