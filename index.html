@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Plombier à Château-du-Loir et alentours : demande de devis gratuite</title>
-<meta name="description" content="Plombier à Château-du-Loir et alentours : fuite, chauffe-eau, chaudière, salle de bain. Décrivez votre besoin et recevez votre devis gratuit.">
+<meta name="description" content="Plombier à Château-du-Loir et alentours : dépannage, pompe à chaleur, chaudière à granulés, plancher chauffant, salle de bain complète. Devis gratuit.">
 <link rel="canonical" href="https://plombier-chateau-du-loir.fr/">
 <link rel="icon" href="/favicon.ico" sizes="48x48">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -133,6 +133,13 @@ footer{background:#0b2e22;color:rgba(255,255,255,.6);font-size:13px;padding:28px
 .pied{display:flex;flex-wrap:wrap;gap:12px 24px;justify-content:space-between}
 footer a{color:rgba(255,255,255,.75)}
 
+.avap{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px}
+.avap figure,.galerie figure{position:relative;border-radius:14px;overflow:hidden;background:var(--ligne)}
+.avap img{width:100%;height:auto;aspect-ratio:16/9;object-fit:cover}
+.galerie{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.galerie img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover}
+.avap figcaption,.galerie figcaption{position:absolute;left:12px;top:12px;background:rgba(15,61,46,.88);color:#fff;font-size:12px;font-weight:700;padding:5px 10px;border-radius:999px}
+@media (max-width:640px){.avap,.galerie{grid-template-columns:1fr}.galerie img{aspect-ratio:4/3}}
 @media (max-width:900px){
   .besoins-grille{grid-template-columns:1fr}
   .hero-grille{grid-template-columns:1fr;grid-template-areas:"texte" "carte" "duo";grid-template-rows:auto;row-gap:28px}
@@ -156,6 +163,7 @@ footer a{color:rgba(255,255,255,.75)}
       Plombier <span>Château-du-Loir</span>
     </a>
     <nav class="liens" aria-label="Navigation">
+      <a href="#travaux">Les travaux</a>
       <a href="#zones">Zones d'intervention</a>
       <a href="#etapes">Comment ça marche</a>
     </nav>
@@ -166,10 +174,10 @@ footer a{color:rgba(255,255,255,.75)}
 <section class="hero" aria-labelledby="titre">
   <div class="wrap hero-grille">
     <div class="hero-texte">
-      <span class="pastille"><i></i>Plombiers du secteur disponibles</span>
+      <span class="pastille"><i></i>Plombier du secteur disponible</span>
       <h1 id="titre">Plombier à <em>Château-du-Loir</em></h1>
       <p class="accroche">Votre plombier près de chez vous</p>
-      <p class="sous-titre">Fuite, chauffe-eau, chaudière ou salle de bain : décrivez votre besoin en deux minutes et recevez votre devis gratuit.</p>
+      <p class="sous-titre">Dépannage, chauffage, pompe à chaleur ou salle de bain complète : décrivez votre besoin en deux minutes et recevez votre devis gratuit.</p>
       <ul class="atouts">
         <li><svg viewBox="0 0 24 24" fill="none" stroke="#f2b33d" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Devis gratuit</li>
         <li><svg viewBox="0 0 24 24" fill="none" stroke="#f2b33d" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Sans engagement</li>
@@ -177,9 +185,10 @@ footer a{color:rgba(255,255,255,.75)}
     </div>
     <div class="hero-duo">
       <div class="duo">
-        <figure><img src="img/travail.webp" alt="Mains d'un chauffagiste qui intervient sur une chaudière" width="800" height="800" fetchpriority="high"></figure>
-        <figure><img src="img/salle-de-bain.webp" alt="Salle de bain moderne avec douche à l'italienne" width="800" height="800"></figure>
+        <figure><img src="img/sdb-marbre.webp" alt="Salle de bain créée par le plombier du secteur : douche à l'italienne et double vasque" width="553" height="1200" fetchpriority="high"></figure>
+        <figure><img src="img/pac-adoucisseur.webp" alt="Pompe à chaleur et adoucisseur installés en chaufferie" width="900" height="1200"></figure>
       </div>
+      <p class="duo-note">Chantiers réalisés par le plombier qui reçoit les demandes.</p>
     </div>
 
     <div class="carte" id="devis">
@@ -196,11 +205,12 @@ footer a{color:rgba(255,255,255,.75)}
           <div class="champ"><label for="besoin">Besoin</label>
             <select id="besoin" name="besoin" required>
               <option value="">Choisir…</option>
-              <option>Fuite d'eau</option>
+              <option>Dépannage (fuite, WC, robinet…)</option>
               <option>Chauffe-eau</option>
-              <option>Chaudière / chauffage</option>
-              <option>Salle de bain</option>
-              <option>Débouchage</option>
+              <option>Pompe à chaleur / chaudière</option>
+              <option>Poêle à granulés</option>
+              <option>Plancher chauffant</option>
+              <option>Salle de bain complète</option>
               <option>Autre</option>
             </select>
           </div>
@@ -228,15 +238,34 @@ footer a{color:rgba(255,255,255,.75)}
   </div>
 </section>
 
+<section class="besoins" id="travaux" aria-labelledby="t-travaux">
+  <div class="wrap">
+    <p class="surtitre">Les travaux</p>
+    <h3 class="titre" id="t-travaux">Du dépannage à la salle de bain complète</h3>
+    <ul class="liste"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><div><strong>Dépannage plomberie</strong><span>Fuite, chauffe-eau, WC, robinetterie : sur tout équipement de plomberie (hors électroménager).</span></div></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><div><strong>Chauffage</strong><span>Pompe à chaleur, chaudière à granulés, poêle à granulés et plancher chauffant. Pose sans dossier d'aides de l'État.</span></div></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><div><strong>Salle de bain complète</strong><span>Création de A à Z : plomberie, douche à l'italienne, faïence.</span></div></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><div><strong>Plomberie neuve et rénovation</strong><span>Réseaux en cuivre, acier ou multicouche, pour une maison neuve ou une rénovation.</span></div></li></ul>
+
+    <p class="surtitre" style="margin-top:56px">Chantiers réalisés</p>
+    <h3 class="titre">Quelques chantiers du plombier qui reçoit vos demandes</h3>
+    <div class="avap">
+      <figure><img src="img/cour-avant.webp" alt="Cour pavée avant les travaux de raccordement" width="1200" height="553" loading="lazy"><figcaption>Avant</figcaption></figure>
+      <figure><img src="img/cour-apres.webp" alt="Même cour après le passage des réseaux et la remise en état" width="1200" height="553" loading="lazy"><figcaption>Après</figcaption></figure>
+    </div>
+    <div class="galerie">
+      <figure><img src="img/chaudiere-granules.webp" alt="Chaudière à granulés installée avec son ballon" width="1200" height="900" loading="lazy"><figcaption>Chaudière à granulés</figcaption></figure>
+      <figure><img src="img/plancher-chauffant.webp" alt="Plancher chauffant en cours de pose dans une pièce rénovée" width="1200" height="900" loading="lazy"><figcaption>Plancher chauffant</figcaption></figure>
+      <figure><img src="img/pac-ballons.webp" alt="Pompe à chaleur raccordée en cuivre avec ballon d'eau chaude" width="675" height="1200" loading="lazy"><figcaption>Pompe à chaleur</figcaption></figure>
+    </div>
+  </div>
+</section>
 
 <section id="zones" aria-labelledby="t-zones">
   <div class="wrap">
     <p class="surtitre">Zones d'intervention</p>
-    <h3 class="titre" id="t-zones">Château-du-Loir et les communes autour</h3>
+    <h3 class="titre" id="t-zones">Château-du-Loir et environ 20 km autour</h3>
     <div class="zones-communes">
-      <span>Château-du-Loir</span><span>Montval-sur-Loir</span><span>Vaas</span><span>Mayet</span><span>Le Lude</span><span>La Chartre-sur-le-Loir</span><span>Dissay-sous-Courcillon</span><span>Marçon</span><span>Jupilles</span><span>Thoiré-sur-Dinan</span><span>Aubigné-Racan</span><span>Le Grand-Lucé</span>
+      <span>Château-du-Loir</span><span>Montval-sur-Loir</span><span>Vaas</span><span>Aubigné-Racan</span><span>Le Lude</span><span>Mayet</span><span>Dissay-sous-Courcillon</span><span>Marçon</span><span>Thoiré-sur-Dinan</span><span>Pontvallain</span><span>Saint-Paterne-Racan</span><span>Château-la-Vallière</span><span>Coulongé</span><span>Sarcé</span><span>Lavernat</span><span>Verneil-le-Chétif</span>
     </div>
-    <p class="zones-note">Votre commune n'est pas dans la liste ? Envoyez quand même votre demande : si un plombier du secteur intervient chez vous, il vous rappelle.</p>
+    <p class="zones-note">Votre commune n'est pas dans la liste ? Envoyez quand même votre demande : pour un dépannage, le plombier peut aller plus loin.</p>
   </div>
 </section>
 
