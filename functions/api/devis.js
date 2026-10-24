@@ -1,6 +1,6 @@
 // Reçoit le formulaire et envoie la demande par e-mail à Nathan (Resend).
 // Variables Cloudflare : RESEND_API_KEY, MAIL_TO, MAIL_FROM
-const BESOINS = ["Fuite d'eau", "Chauffe-eau", "Chaudière / chauffage", "Salle de bain", "Débouchage", "Autre"];
+const BESOINS = ["Dépannage (fuite, WC, robinet…)", "Chauffe-eau", "Pompe à chaleur / chaudière", "Poêle à granulés", "Plancher chauffant", "Salle de bain complète", "Autre"];
 
 const clean = (v, max) => String(v ?? "").replace(/[\u0000-\u001f\u007f]/g, " ").trim().slice(0, max);
 const esc = (s) => s.replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
