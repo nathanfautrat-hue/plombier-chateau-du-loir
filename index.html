@@ -212,6 +212,7 @@ footer a{color:rgba(255,255,255,.75)}
             </select>
           </div>
         </div>
+        <div class="champ" id="champ-precision" hidden><label for="precision">Précisez votre besoin</label><input id="precision" name="precision" maxlength="120" disabled placeholder="Ex. : changer un radiateur"></div>
         <input type="hidden" name="gclid" id="gclid">
         <div class="piege" aria-hidden="true"><label for="site">Site</label><input id="site" name="site" tabindex="-1" autocomplete="off"></div>
         <label class="accord"><input type="checkbox" name="accord" required> J'accepte que ma demande et mes coordonnées soient transmises à un plombier du secteur pour qu'il me recontacte.</label>
@@ -287,6 +288,9 @@ footer a{color:rgba(255,255,255,.75)}
 (function(){
   var f=document.getElementById('form-devis'), r=document.getElementById('retour'), b=f.querySelector('button');
   var g=new URLSearchParams(location.search).get('gclid'); if(g) document.getElementById('gclid').value=g.slice(0,200);
+  var bs=document.getElementById('besoin'), cp=document.getElementById('champ-precision'), pr=document.getElementById('precision');
+  function autre(){ var on=bs.value==='Autre'; cp.hidden=!on; pr.disabled=!on; pr.required=on; }
+  bs.addEventListener('change',autre);
   f.addEventListener('submit',function(e){
     e.preventDefault();
     r.className='retour'; r.textContent='';
@@ -294,7 +298,7 @@ footer a{color:rgba(255,255,255,.75)}
     b.disabled=true; b.textContent='Envoi en cours…';
     var data=Object.fromEntries(new FormData(f).entries());
     fetch('/api/devis',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)})
-      .then(function(res){ if(!res.ok) throw 0; f.reset(); r.className='retour ok'; r.textContent='Merci, votre demande est bien partie. Un plombier du secteur vous rappelle.'; })
+      .then(function(res){ if(!res.ok) throw 0; f.reset(); autre(); r.className='retour ok'; r.textContent='Merci, votre demande est bien partie. Un plombier du secteur vous rappelle.'; })
       .catch(function(){ r.className='retour err'; r.textContent='L’envoi n’a pas fonctionné. Réessayez dans un instant.'; })
       .finally(function(){ b.disabled=false; b.textContent='Demander mon devis gratuit'; });
   });
