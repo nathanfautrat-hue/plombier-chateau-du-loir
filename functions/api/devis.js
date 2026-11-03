@@ -13,21 +13,18 @@ export async function onRequestPost({ request, env }) {
 
     const nom = clean(d.nom, 80);
     const telephone = clean(d.telephone, 20);
-    const email = clean(d.email, 120);
     const commune = clean(d.commune, 60);
     const besoin = clean(d.besoin, 40);
-    const message = clean(d.message, 1500);
     const gclid = clean(d.gclid, 200).replace(/[^A-Za-z0-9_-]/g, "");
 
     const telOk = /^[0-9+ .()-]{10,20}$/.test(telephone);
-    const mailOk = !email || /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-    if (!nom || !telOk || !mailOk || !commune || !BESOINS.includes(besoin) || !message || d.accord !== "on") {
+    if (!nom || !telOk || !commune || !BESOINS.includes(besoin) || d.accord !== "on") {
       return Response.json({ ok: false }, { status: 400 });
     }
 
     const lignes = [
-      ["Nom", nom], ["Téléphone", telephone], ["E-mail", email || "non renseigné"],
-      ["Commune", commune], ["Besoin", besoin], ["Message", message],
+      ["Nom", nom], ["Téléphone", telephone],
+      ["Commune", commune], ["Besoin", besoin],
       ["Venue de Google Ads", gclid ? "oui (GCLID : " + gclid + ")" : "non"],
       ["Reçue le", new Date().toLocaleString("fr-FR", { timeZone: "Europe/Paris" })],
     ];
@@ -40,7 +37,6 @@ export async function onRequestPost({ request, env }) {
       body: JSON.stringify({
         from: env.MAIL_FROM,
         to: [env.MAIL_TO],
-        reply_to: email || undefined,
         subject: `Demande plomberie : ${besoin} à ${commune}`,
         html,
       }),
